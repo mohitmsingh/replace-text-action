@@ -1,0 +1,19 @@
+name: "Replace Text in File"
+description: "Replaces occurrences of a text with another text in a specified file."
+author: "Your Name"
+inputs:
+  OriginalText:
+    description: "The text to be replaced."
+    required: true
+  ReplaceText:
+    description: "The replacement text."
+    required: true
+  FilePath:
+    description: "The file path to perform the replacement."
+    required: true
+outputs:
+  Result:
+    description: "A message indicating success or failure."
+runs:
+  using: "node16"
+  main: "dist/main.js"
