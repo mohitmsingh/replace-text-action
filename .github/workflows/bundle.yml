@@ -37,11 +37,12 @@ jobs:
 
       - name: Bundle Action with NCC
         run: ncc build src/main.js -o dist
-
+      
       - name: Commit Changes
         run: |
-            git config --local user.name "$GIT_AUTHOR_NAME"
-            git config --local user.email "$GIT_AUTHOR_EMAIL"
+            git config --local user.name "mohitmsingh"
+            git config --local user.email "mohit.itsector@gmail.com"
             git add dist/
             git commit -m "Auto-bundled action [skip ci]" || echo "No changes to commit"
-            git push origin main
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+      
