@@ -17,3 +17,7 @@ outputs:
 runs:
   using: "node16"
   main: "dist/index.js"
+  
+branding:
+  icon: 'zap'  # Optional, choose an icon that represents your action
+  color: 'blue'  # Optional, set a color to customize the icon's look
