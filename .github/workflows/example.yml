@@ -29,3 +29,8 @@ jobs:
           OriginalText: ${{ github.event.inputs.OriginalText }}
           ReplaceText: ${{ github.event.inputs.ReplaceText }}
           FilePath: ${{ github.event.inputs.FilePath }}
+
+      - name: Read the content of the file after replacement
+        run: |
+          echo "The content of the file after text replacement:"
+          cat ${{ github.event.inputs.FilePath }}  # This will display the content of the file
