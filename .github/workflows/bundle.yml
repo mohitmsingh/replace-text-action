@@ -18,15 +18,18 @@ jobs:
           node-version: 16
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Install NCC
+        run: npm install -g @vercel/ncc
 
       - name: Bundle Action with NCC
         run: ncc build src/main.js -o dist
 
       - name: Commit Changes
         run: |
-          git config --local user.name "mohitmsingh"
-          git config --local user.email "mohit.itsector@gmail.com"
-          git add dist/
-          git commit -m "Auto-bundled action [skip ci]" || echo "No changes to commit"
-          git push origin main
+            git config --local user.name "mohitmsingh"
+            git config --local user.email "mohit.itsector@gmail.com"
+            git add dist/
+            git commit -m "Auto-bundled action [skip ci]" || echo "No changes to commit"
+            git push origin main 
