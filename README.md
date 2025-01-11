@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Replace text in file
-        uses: your-org/replace-text-action@v1
+        uses: mohitmsingh/replace-text-action@v1
         with:
           OriginalText: "Hello"
           ReplaceText: "Hi"
