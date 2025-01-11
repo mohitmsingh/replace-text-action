@@ -1,0 +1,31 @@
+name: Test Replace Text Action
+
+on:
+  workflow_dispatch:  # This makes the workflow manual
+    inputs:
+      OriginalText:   # Define input parameters for the manual trigger
+        description: 'Text to be replaced'
+        required: true
+        default: 'Hello'
+      ReplaceText:
+        description: 'Text to replace with'
+        required: true
+        default: 'Hi'
+      FilePath:
+        description: 'Path to the file where text replacement occurs'
+        required: true
+        default: './example.txt'
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Replace Text
+        uses: mohitmsingh/replace-text-action@v1
+        with:
+          OriginalText: ${{ github.event.inputs.OriginalText }}
+          ReplaceText: ${{ github.event.inputs.ReplaceText }}
+          FilePath: ${{ github.event.inputs.FilePath }}
