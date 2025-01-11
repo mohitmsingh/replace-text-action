@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Replace Text
-        uses: mohitmsingh/replace-text-action@v1
+        uses: mohitmsingh/replace-text-action@v2
         with:
           OriginalText: ${{ github.event.inputs.OriginalText }}
           ReplaceText: ${{ github.event.inputs.ReplaceText }}
