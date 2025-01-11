@@ -16,4 +16,4 @@ outputs:
     description: "A message indicating success or failure."
 runs:
   using: "node16"
-  main: "dist/main.js"
+  main: "dist/index.js"
